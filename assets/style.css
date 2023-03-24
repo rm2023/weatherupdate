@@ -11,5 +11,11 @@
     display:flex;
     justify-content: space-between;
     border: 5px solid black;
+    
     padding: 20px;
+}
+.card1{
+    margin: 7px;
+    background: blue;
+    color: white;
 }
