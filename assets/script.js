@@ -19,6 +19,7 @@ click1.addEventListener("click", function () {
         return response.json();
         
     }).then(function (data) {
+        console.log("data  = ", data);
         var forecastData = data.list;
         var forecastHtml = "";
    
@@ -32,7 +33,8 @@ click1.addEventListener("click", function () {
             `<img src=${iconUrl} alt=${iconDescr} >` +
                 // "Temperature: " + ((forecast.main.temp -273.15)*9/5+32) + " &deg;F<br>" +
                 "Temperature: " + (forecast.main.temp) + " &deg;F<br>" +
-                "Weather description: " + forecast.weather[0].description + "</div>";
+                "Humidity: "  + forecast.main.humidity + "% <br>" +
+                "Wind: " + forecast.wind.speed + "  MPH" + "</div>";
 
         }
         weatherDataElem.innerHTML = forecastHtml;
