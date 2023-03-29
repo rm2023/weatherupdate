@@ -4,6 +4,9 @@ var addItem;
 var click1 = document.querySelector("#button-addon1");
 var input1 = document.querySelector("#input1");
 var weatherDataElem = document.querySelector("#weather-data");
+var weatherTodayElem = document.querySelector("#todayWeather");
+
+
 
 click1.addEventListener("click", function () {
     var addItem = $('input[name="input1"]').val();
@@ -19,7 +22,7 @@ click1.addEventListener("click", function () {
         return response.json();
         
     }).then(function (data) {
-        console.log("data  = ", data);
+       
         var forecastData = data.list;
         var forecastHtml = "";
    
@@ -35,9 +38,9 @@ click1.addEventListener("click", function () {
                 "Temperature: " + (forecast.main.temp) + " &deg;F<br>" +
                 "Humidity: "  + forecast.main.humidity + "% <br>" +
                 "Wind: " + forecast.wind.speed + "  MPH" + "</div>";
-
         }
         weatherDataElem.innerHTML = forecastHtml;
+        
     }).catch(function (error) {
         console.log(error);
     });
