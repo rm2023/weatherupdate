@@ -17,7 +17,7 @@ click1.addEventListener("click", function () {
     $('input[name="input1"]').val('');
 
     var APIKey = "1d3e7e850fece8f1faa4ded00b53eacc";
-    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=" + APIKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=" + APIKey;
     fetch(queryURL).then(function (response) {
         return response.json();
         
